@@ -1,3 +1,9 @@
+#ifndef NO_DEBUG
+#define NO_DEBUG
+#endif
+#ifndef NO_PRINT
+#define NO_PRINT
+#endif
 /* Copyright 2020 elijahblake81
  *
  * This program is free software: you can redistribute it and/or modify

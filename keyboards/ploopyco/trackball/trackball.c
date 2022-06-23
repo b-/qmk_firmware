@@ -120,6 +120,7 @@ report_mouse_t pointing_device_task_kb(report_mouse_t mouse_report) {
 
     if (is_drag_scroll) {
 #ifdef PLOOPY_DRAGSCROLL_H_INVERT
+        // Invert horizontal scroll direction
         mouse_report.h = -mouse_report.x;
 #else
         mouse_report.h = mouse_report.x;

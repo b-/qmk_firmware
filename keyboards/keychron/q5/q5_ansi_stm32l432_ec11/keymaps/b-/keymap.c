@@ -222,7 +222,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         KC_TRNS,            KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,   KC_TRNS,    KC_TRNS,             KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
         //esc                  f1        f2        f3        f4         f5        f6       f7        f8        f9        f10        f11       f12             del       home      end       knob
 
-        KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS, KC_TRNS,   KC_TRNS,  KC_TRNS,      KC_TRNS,  KC_TRNS,  KC_TRNS,
+        KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS, KC_TRNS,   KC_TRNS,  KC_TRNS,      KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS
         // ~`        1         2         3         4         5         6         7         8          9         10       -_         =+        bksp          numl      /         *         -
 
         KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,       KC_TRNS,  KC_TRNS,  KC_TRNS,

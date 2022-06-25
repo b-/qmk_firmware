@@ -17,6 +17,7 @@
 #include QMK_KEYBOARD_H
 #include "test.h"
 
+
 enum layers{
   MAC_BASE,
   MAC_FN,
@@ -236,4 +237,55 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
         KC_TRNS,  KC_TRNS,  KC_TRNS,                                KC_TRNS,                                KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS),
         // ctrl      opt       cmd                                     space                             cmd         alt      ctrl               left      down      right     0         .         nent
+*/
+
+bool encoder_update_user(uint8_t index, bool clockwise) {
+    if (index == 0) {
+        if (IS_LAYER_ON(MAC_FN)) {
+            if (clockwise) {
+                tap_code_delay(KC_BRIU, TAP_CODE_DELAY);
+            } else {
+                tap_code_delay(KC_BRID, TAP_CODE_DELAY);
+            }
+        }
+        else // default rotary function
+            if (clockwise) {
+                tap_code_delay(KC_VOLU, TAP_CODE_DELAY);
+            } else {
+                tap_code_delay(KC_VOLD, TAP_CODE_DELAY);
+            }
+        }
+    return false; //stop processing further
+}
+/*
+bool encoder_update_user(uint8_t index, bool clockwise) {
+if (index == 0) {
+  // not _LOWER and not _ASCII so only QWERTY is active
+  if (!IS_LAYER_ON(MAC_BASE) && !IS_LAYER_ON(WIN_FN) && !IS_LAYER_ON(WIN_BASE))
+  {
+    if (clockwise) {
+      tap_code(KC_VOLD);
+    } else {
+      tap_code(KC_VOLU);
+    }
+  }
+  // If _LOWER (only one we really care about here)
+  else if (IS_LAYER_ON(MAC_FN)) {
+    if (clockwise) {
+      tap_code(KC_BRIU);
+    } else {
+      tap_code(KC_BRID);
+    }
+  }
+  // If _RAISE (only one we really care about here)
+  else if (IS_LAYER_ON(_RAISE)) {
+    if (clockwise) {
+      tap_code(KC_VOLU);
+    } else {
+      tap_code(KC_VOLD);
+    }
+  }
+}
+return false;
+}
 */

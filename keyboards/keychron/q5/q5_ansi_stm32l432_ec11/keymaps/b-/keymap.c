@@ -16,7 +16,7 @@
 
 #include QMK_KEYBOARD_H
 #include "test.h"
-
+#include "b-.h"
 
 enum layers{
   MAC_BASE,
@@ -27,8 +27,8 @@ enum layers{
   L_BOOT,
 };
 
-enum custom_keycodes {
-    KC_MISSION_CONTROL = SAFE_RANGE,
+enum km_custom_keycodes {
+    KC_MISSION_CONTROL = NEW_SAFE_RANGE,
     KC_LAUNCHPAD,
     KC_LOPTN,
     KC_ROPTN,

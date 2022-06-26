@@ -242,6 +242,15 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
+        if (IS_LAYER_ON(L_BOOT)) {
+            if (clockwise) {
+                rgb_matrix_increase_speed();
+            }
+            else {
+                rgb_matrix_decrease_speed();
+            }
+            return false;
+        }
         if (IS_LAYER_ON(MAC_FN)) {
             if (clockwise) {
                 tap_code_delay(KC_BRIU, TAP_CODE_DELAY);

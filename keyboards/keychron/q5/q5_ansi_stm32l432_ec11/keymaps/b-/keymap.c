@@ -177,7 +177,7 @@ bool dip_switch_update_user(uint8_t index, bool active) {
     return true;
 }
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case KC_MISSION_CONTROL:
             if (record->event.pressed) {

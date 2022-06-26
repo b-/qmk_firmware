@@ -69,8 +69,8 @@ LT(MAC_FN,KC_TAB),     KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,  
   LCTL_T(KC_ESC),  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,          KC_ENT,    KC_P4,    KC_P5,   KC_P6,    KC_PPLS,
         // caps       a         s         d         f         g        h         j         k       l         ;         '"                   enter       4         5         6         +
 
-//LM(L_SHIFT, MOD_LSFT),  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH, LM(L_SHIFT, MOD_RSFT),  KC_UP,   KC_P1,    KC_P2,   KC_P3,
-        KC_LSHIFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,            KC_RSHIFT,       KC_UP,   KC_P1,    KC_P2,   KC_P3,
+LM(L_SHIFT, MOD_LSFT),  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH, LM(L_SHIFT, MOD_RSFT),  KC_UP,   KC_P1,    KC_P2,   KC_P3,
+//        KC_LSHIFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,            KC_RSHIFT,       KC_UP,   KC_P1,    KC_P2,   KC_P3,
         // shift           z         x         c         v         b         n         m         ,<        .>        /?              rshift           up        1         2         3
 
         KC_LCTL,  KC_LOPTN, KC_LCMMD,                               KC_SPC,                            KC_RCMMD, KC_RALT,  KC_RCTL,           KC_LEFT,  KC_DOWN,  KC_RGHT,     KC_P0,   KC_PDOT,  KC_PENT),
@@ -169,6 +169,26 @@ LT(MAC_FN,KC_TAB),     KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,  
         KC_TRNS,  KC_TRNS,  KC_TRNS,                                KC_TRNS,                          KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS
         // ctrl      opt       cmd                                     space                             cmd      alt      ctrl      left      down      right     0         .         nent
         ),
+/*
+    [BLANK] = LAYOUT_ansi_98(
+        KC_TRNS,            KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,   KC_TRNS,    KC_TRNS,             KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
+        //esc                  f1        f2        f3        f4         f5        f6       f7        f8        f9        f10        f11       f12             del       home      end       knob
+
+        KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS, KC_TRNS,   KC_TRNS,  KC_TRNS,      KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS
+        // ~`        1         2         3         4         5         6         7         8          9         10       -_         =+        bksp          numl      /         *         -
+
+        KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,       KC_TRNS,  KC_TRNS,  KC_TRNS,
+        //  tab       q         w         e         r         t        y        u        i         o         p         [          ]         \               7         8         9
+
+        KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,             KC_TRNS,        KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
+        // caps       a         s         d         f         g        h         j         k       l         ;         '"              enter                4         5         6         +
+
+        KC_TRNS,    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,       KC_TRNS,                    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
+        // shift       z         x         c         v         b         n         m         ,<        .>        /?              rshift                     up        1         2         3
+
+        KC_TRNS,  KC_TRNS,  KC_TRNS,                                KC_TRNS,                                KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS),
+        // ctrl      opt       cmd                                     space                             cmd         alt      ctrl               left      down      right     0         .         nent
+*/
 };
 
 bool dip_switch_update_user(uint8_t index, bool active) {
@@ -219,30 +239,10 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
             return true;  // Process all other keycodes normally
     }
 }
-/*
-    [BLANK] = LAYOUT_ansi_98(
-        KC_TRNS,            KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,    KC_TRNS,   KC_TRNS,    KC_TRNS,             KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
-        //esc                  f1        f2        f3        f4         f5        f6       f7        f8        f9        f10        f11       f12             del       home      end       knob
-
-        KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS, KC_TRNS,   KC_TRNS,  KC_TRNS,      KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS
-        // ~`        1         2         3         4         5         6         7         8          9         10       -_         =+        bksp          numl      /         *         -
-
-        KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,       KC_TRNS,  KC_TRNS,  KC_TRNS,
-        //  tab       q         w         e         r         t        y        u        i         o         p         [          ]         \               7         8         9
-
-        KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,             KC_TRNS,        KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
-        // caps       a         s         d         f         g        h         j         k       l         ;         '"              enter                4         5         6         +
-
-        KC_TRNS,    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,       KC_TRNS,                    KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,
-        // shift       z         x         c         v         b         n         m         ,<        .>        /?              rshift                     up        1         2         3
-
-        KC_TRNS,  KC_TRNS,  KC_TRNS,                                KC_TRNS,                                KC_TRNS,  KC_TRNS,   KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS),
-        // ctrl      opt       cmd                                     space                             cmd         alt      ctrl               left      down      right     0         .         nent
-*/
 
 bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
-        if (IS_LAYER_ON(L_BOOT)) {
+        if (IS_LAYER_ON(L_SHIFT)) {
             if (clockwise) {
                 rgb_matrix_increase_speed();
             }

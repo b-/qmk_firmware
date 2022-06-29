@@ -24,7 +24,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           KC_BTN2, DRAG_SCROLL //LT(1, KC_BTN5)
     ),
     [1] = LAYOUT(
-        KC_BTN2, _______, _______,
+        DPI_CONFIG, _______, KC_BTN5,
           LT(2, KC_TRNS), _______
     ),
     [2] = LAYOUT(

@@ -2,7 +2,7 @@
 #ifndef USERSPACE
 #define USERSPACE
 
-#include "quantum.h"
+//#include "quantum.h"
 #include QMK_KEYBOARD_H
 
 #define COMBO_COUNT 1

@@ -17,9 +17,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "debug.h"
 
 debug_config_t debug_config = {
-    .enable   = false, //
-    .matrix   = false, //
-    .keyboard = false, //
-    .mouse    = false, //
+    .enable   = true, //
+    .matrix   = true, //
+    .keyboard = true, //
+    .mouse    = true, //
     .reserved = 0      //
 };

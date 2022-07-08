@@ -148,7 +148,7 @@ const USB_Descriptor_HIDReport_Datatype_t PROGMEM SharedReport[] = {
             HID_RI_REPORT_SIZE(8, 0x10),
 #    endif
             HID_RI_INPUT(8, HID_IOF_DATA | HID_IOF_VARIABLE | HID_IOF_RELATIVE),
-            #ifdef MOUSE_HIRES_SCROLL
+        #ifdef MOUSE_EXTENDED_REPORT
             HID_RI_COLLECTION(8, 0x02), // Collection (Logical)
                 HID_RI_REPORT_ID(8, 99), // Report ID Multiplier
                 HID_RI_USAGE(8, 0x48), //    Usage (Resolution Multiplier)
@@ -160,16 +160,16 @@ const USB_Descriptor_HIDReport_Datatype_t PROGMEM SharedReport[] = {
                 HID_RI_PHYSICAL_MAXIMUM(8, 0xFF), // Physical Maximum (RESOLUTION MULTIPLIER) // TODO: #define it
                 HID_RI_FEATURE(8, 0x02), // Feature (Data,Var,Abs,No Wrap,Linear,Preferred State,No Null Position,Non-volatile)
                 HID_RI_REPORT_ID(8, REPORT_ID_MOUSE),
-                #endif
+        #endif
                 // Vertical wheel (1 byte)
                 HID_RI_USAGE(8, 0x38),         // Wheel
-                #ifndef MOUSE_HIRES_SCROLL
+        #ifndef MOUSE_EXTENDED_REPORT
                 HID_RI_LOGICAL_MINIMUM(8, -127),
                 HID_RI_LOGICAL_MAXIMUM(8, 127),
-                #else
+        #else
                 HID_RI_LOGICAL_MINIMUM(16, -32767),
                 HID_RI_LOGICAL_MAXIMUM(16, 32767),
-                #endif
+        #endif
                 HID_RI_REPORT_COUNT(8, 0x01),
                 HID_RI_REPORT_SIZE(8, 0x08),
                 HID_RI_INPUT(8, HID_IOF_DATA | HID_IOF_VARIABLE | HID_IOF_RELATIVE),

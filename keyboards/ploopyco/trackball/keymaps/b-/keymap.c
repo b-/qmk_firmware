@@ -16,12 +16,16 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
-
+#ifdef REMAPPER
+#define DRAG_BTN KC_BTN6
+#else
+#define DRAG_BTN DRAG_SCROLL
+#endif
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT( /* Base */
         KC_BTN1, KC_BTN3, KC_BTN4,
-          KC_BTN2, DRAG_SCROLL //LT(1, KC_BTN5)
+          KC_BTN2, DRAG_BTN
     ),
     [1] = LAYOUT(
         DPI_CONFIG, _______, KC_BTN5,
@@ -31,3 +35,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         RESET, _______, _______, _______, _______
     )
 };
+
+bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+    #ifdef REMAPPER
+    case KC_BTN5:
+      if (record->event.pressed) {
+        layer_on(1);
+      } else {
+        layer_off(1);
+      }
+      return true;
+    #endif
+    default:
+      return true; // Process all other keycodes normally
+  }
+}

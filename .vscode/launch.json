@@ -1,0 +1,41 @@
+{
+    "configurations": [
+        
+    {
+        "name": "Flash Ploopy",
+        "type": "f5anything",
+        "request": "launch",
+        "command": ";qmk clean; banner PLOOPY ; banner FLASH; qmk flash -kb ploopyco/trackball -km b- -j 8 && exit",
+        "terminalName": "QMK Compile",
+        "terminalIndex": -1,
+        "showTerminal": true,
+    },
+    {
+        "name": "Compile Ploopy",
+        "type": "f5anything",
+        "request": "launch",
+        "command": ";qmk clean; banner PLOOPY ; qmk compile -kb ploopyco/trackball -km b- -j 8 && exit",
+        "terminalName": "QMK Compile",
+        "terminalIndex": -1,
+        "showTerminal": true,
+    },
+    {
+        "name": "Compile Drop Alt",
+        "type": "f5anything",
+        "request": "launch",
+        "command": ";qmk clean; banner DROP ALT ; qmk compile -kb massdrop/alt -km b- -j 8 && exit",
+        "terminalName": "QMK Compile",
+        "terminalIndex": -1,
+        "showTerminal": true
+    },
+        {
+        "name": "FLASH Drop Alt",
+        "type": "f5anything",
+        "request": "launch",
+        "command": ";qmk clean; banner DROP ALT ; qmk flash -kb massdrop/alt -km b- -j 8 && exit",
+        "terminalName": "QMK Compile",
+        "terminalIndex": -1,
+        "showTerminal": true
+    },
+    ]
+}

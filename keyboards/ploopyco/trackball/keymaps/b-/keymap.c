@@ -35,21 +35,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         RESET, _______, _______, _______, _______
     )
 };
-
 bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     #ifdef REMAPPER
+      // for use with https://github.com/jfedor2/hid_remapper for hires drag_scroll
     case KC_BTN5:
       if (record->event.pressed) {
         layer_on(1);
       } else {
         layer_off(1);
       }
-      return true;
+      return true; // still send the HID report
     #endif
     default:
       return true; // Process all other keycodes normally
   }
+}
 void keyboard_post_init_user(void) {
   // Customise these values to desired behaviour
   //debug_enable=true;

@@ -6,8 +6,6 @@
 /keyboards/ploopyco/trackball
 /keyboards/massdrop/alt/
 keyboards/keychron/q5/*
-!keyboards/keychron/q5/q5_iso*
-!keyboards/keychron/q5/q5_ansi_stm32l432
 !users/*
 users/b-/*
 users/drashna/*

@@ -1,4 +1,4 @@
-/* Copyright 2021 @ Keychron(https://www.keychron.com)
+/* Copyright 2022 @ Keychron(https://www.keychron.com)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,11 +15,6 @@
  */
 
 #pragma once
-
-/* USB Device descriptor parameter */
-#define VENDOR_ID       0x3434
-#define MANUFACTURER    Keychron
-#define PRODUCT         Keychron Q0
 
 /* key matrix size */
 #define MATRIX_ROWS 6
@@ -39,11 +34,11 @@
 #define DRIVER_COUNT 1
 #define DRIVER_ADDR_1 0b1110100
 
-#define HUE_ADJUST
-#ifdef HUE_ADJUST
-#   define CONSTANT_CURRENT_STEP \
-        { 0xFF, 0xFF, 0x70, 0xFF, 0xFF, 0x70, 0xFF, 0xFF, 0x70, 0xFF, 0xFF, 0x70 }
-#endif
+#define CKLED2001_CURRENT_TUNE \
+    { 0xFF, 0xFF, 0x70, 0xFF, 0xFF, 0x70, 0xFF, 0xFF, 0x70, 0xFF, 0xFF, 0x70 }
+
+#define RGB_MATRIX_CENTER \
+    { 56, 16 }
 
 /* NKRO */
 #define FORCE_NKRO
@@ -51,8 +46,9 @@
 /* turn off effects when suspended */
 #define RGB_DISABLE_WHEN_USB_SUSPENDED
 
-/* We have 2KB EEPROM size on STM32L432 */
-#define DYNAMIC_KEYMAP_EEPROM_MAX_ADDR 2047
+/* EEPROM Driver Configuration */
+#define WEAR_LEVELING_LOGICAL_SIZE 2048
+#define WEAR_LEVELING_BACKING_SIZE (WEAR_LEVELING_LOGICAL_SIZE * 2)
 
 // RGB Matrix Animation modes. Explicitly enabled
 // For full list of effects, see:
@@ -103,6 +99,3 @@
 #define ENABLE_RGB_MATRIX_SOLID_SPLASH
 #define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
 // #define RGB_MATRIX_KEYPRESSES
-
-/* Enable receive custom command from host */
-#define RAW_HID_CMD 0xAB

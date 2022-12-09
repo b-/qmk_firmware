@@ -1,6 +1,6 @@
 # Keychron Q5
 
-A customizable 100 keys keyboard.
+A customizable 96% keyboard.
 
 * Keyboard Maintainer: [Keychron](https://github.com/keychron)
 * Hardware Supported: Keychron Q5
@@ -8,11 +8,11 @@ A customizable 100 keys keyboard.
 
 Make example for this keyboard (after setting up your build environment):
 
-    make keychron/q5/q5_ansi_stm32l432:default
+  make keychron/q5/ansi:default
 
 Flashing example for this keyboard:
 
-    make keychron/q5/q5_ansi_stm32l432:default:flash
+  make keychron/q5/ansi:default:flash
 
 **Reset Key**: Hold down the key located at *K00*, commonly programmed as *Esc* while plugging in the keyboard.
 
